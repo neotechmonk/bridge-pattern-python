@@ -1,5 +1,6 @@
+# from minmax_trading_bot import should_buy_avg, should_sell_avg
+from avg_trading_bot import should_buy_avg, should_sell_avg
 from coinbase import Coinbase
-from minmax_trading_bot import should_buy_minmax, should_sell_minmax
 
 
 def main() -> None:
@@ -11,8 +12,8 @@ def main() -> None:
     exchange = Coinbase()
 
     #create the speicifict trading bot
-    should_buy = should_buy_minmax(exchange=exchange, symbol= symbol)
-    should_sell = should_sell_minmax(exchange=exchange, symbol= symbol)
+    should_buy = should_buy_avg( exchange.get_prices, symbol= symbol)
+    should_sell = should_sell_avg(  exchange.get_prices, symbol= symbol)
 
     if should_buy: 
         exchange.buy(symbol, trade_amount)
