@@ -1,5 +1,5 @@
-from avg_trading_bot import AvgTradingBot
 from coinbase import Coinbase
+from minmax_trading_bot import MinMaxTradingBot
 
 
 def main() -> None:
@@ -11,7 +11,7 @@ def main() -> None:
     exchange = Coinbase()
 
     #create the speicific trading bot
-    trading_bot = AvgTradingBot(exchange = exchange)
+    trading_bot = MinMaxTradingBot(exchange = exchange)
     should_buy = trading_bot.should_buy(symbol= symbol)
     should_sell = trading_bot.should_sell(symbol= symbol)
 
