@@ -1,14 +1,14 @@
 import statistics
 
-from exchange import Exchange
+from trading import GetPricesFunction
 
 
-def should_buy(exchange: Exchange, symbol: str) -> bool:
-    prices = exchange.get_prices(symbol)
+def should_buy(get_prices : GetPricesFunction, symbol: str) -> bool:
+    prices = get_prices(symbol)
     list_window = prices[-3:]
     return prices[-1] < statistics.mean(list_window)
 
-def should_sell(exchange: Exchange,  symbol: str) -> bool:
-    prices = exchange.get_prices(symbol)
+def should_sell(get_prices : GetPricesFunction,  symbol: str) -> bool:
+    prices = get_prices(symbol)
     list_window = prices[-3:]
     return prices[-1] > statistics.mean(list_window)

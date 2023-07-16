@@ -10,7 +10,7 @@ def main() -> None:
     # create the exchange
     exchange = Coinbase()
 
-    #create the speicific trading bot
+    #create the speicifict trading bot
     should_buy = should_buy_minmax(exchange=exchange, symbol= symbol)
     should_sell = should_sell_minmax(exchange=exchange, symbol= symbol)
 
