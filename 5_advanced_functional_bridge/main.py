@@ -1,6 +1,6 @@
 # from minmax_trading_bot import should_buy_avg, should_sell_avg
 from avg_trading_bot import should_buy_avg, should_sell_avg
-from binance import Binance
+from coinbase import Coinbase
 from trading import run_bot
 
 
@@ -10,7 +10,7 @@ def main() -> None:
     trade_amount = 10
 
     # create the exchange
-    exchange = Binance()
+    exchange = Coinbase()
 
     #use the run_bot to delegate execution
     run_bot(get_prices=exchange.get_prices,
