@@ -1,4 +1,4 @@
-<abstract> `Excahnge` class is implemented by `Binance` and `Coinbase`
+<abstract> `Exchange` class is implemented by `Binance` and `Coinbase`
 
 all methods are implemented at the level of the specific excahnges
 
